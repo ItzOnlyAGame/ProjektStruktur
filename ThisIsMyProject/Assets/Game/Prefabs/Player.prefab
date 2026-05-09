@@ -282,4 +282,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fdc9a8c9eaf1f84fa25bd9a9f2c4101, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerShoot
-  projectilePrefab: {fileID: 0}
+  projectilePrefab: {fileID: 7150132990757153368, guid: 0d716d8fae526d54fb6811a6a9d0664b, type: 3}
+  cooldown: 0.5
