@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 2060116504934339722}
   m_Layer: 6
   m_Name: ammo
-  m_TagString: Untagged
+  m_TagString: Ammo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -127,7 +127,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Projectile
   speed: 10
-  lifeTime: 10
 --- !u!54 &2060116504934339722
 Rigidbody:
   m_ObjectHideFlags: 0

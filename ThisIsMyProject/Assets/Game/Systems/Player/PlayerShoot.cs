@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 public class PlayerShoot : MonoBehaviour
 {
     public GameObject projectilePrefab;
-    public float cooldown = 0.5f;
+    public float cooldown = 0.9f;
 
     private float nextShootTime;
 

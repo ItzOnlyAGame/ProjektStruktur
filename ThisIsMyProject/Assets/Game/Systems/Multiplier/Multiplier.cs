@@ -28,18 +28,40 @@ public class Multiplier : MonoBehaviour
             // Destroy gate after use
             Destroy(gameObject);
         }
-    }
-
-    void MultiplyPlayers(Vector3 centerPosition)
-    {
-        for (int i = 0; i < addAmount; i++)
+        if (other.gameObject.CompareTag("Ammo"))
         {
-            // Spread players left and right
-            float offsetX = (i - addAmount / 2f) * spacing;
-
-            Vector3 spawnPos = centerPosition + new Vector3(offsetX, 0f, 0f);
-
-            Instantiate(playerPrefab, spawnPos, Quaternion.identity);
+            addAmount = addAmount + 1;
+            Debug.Log(addAmount);
+            other.gameObject.GetComponent<ammo>().OnMultiplierHit();
+            if (addAmount <= 5){
+                addAmount == 5;
+            }
         }
     }
-}
+
+void MultiplyPlayers(Vector3 centerPosition)
+    {
+        Debug.Log(addAmount);
+
+        int columns = Mathf.CeilToInt(Mathf.Sqrt(addAmount));
+
+        for (int i = 0; i < addAmount; i++)
+        {
+            // Grid/blob positioning
+            int row = i / columns;
+            int column = i % columns;
+
+            float offsetX = (column - columns / 2f) * spacing;
+            float offsetZ = row * spacing;
+
+            Vector3 spawnPos = centerPosition + new Vector3(Random.Range(-0.15f, 0.15f), 0f, 0f);
+
+            GameObject newPlayer = Instantiate(playerPrefab, spawnPos, Quaternion.identity);
+
+            // Ignore collisions with all other players
+            Collider newCollider = newPlayer.GetComponent<Collider>();
+
+            GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
+            }
+        }
+    }

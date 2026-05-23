@@ -27,4 +27,9 @@ public class ammo : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    public void OnMultiplierHit()
+    {
+        Destroy(gameObject);
+    }
 }
