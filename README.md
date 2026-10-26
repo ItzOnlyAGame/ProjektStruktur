@@ -22,3 +22,5 @@ Code conventions:
     -Dependancy Inversion Prinzip
 -Scalability
 -Clean Code
+
+All rights reserved. Unauthorized copying, modification, or distribution of this software via any medium is strictly prohibited.
