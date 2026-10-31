@@ -34,7 +34,7 @@ public class Multiplier : MonoBehaviour
             Debug.Log(addAmount);
             other.gameObject.GetComponent<ammo>().OnMultiplierHit();
             if (addAmount <= 5){
-                addAmount == 5;
+                addAmount = 5;
             }
         }
     }
@@ -54,7 +54,7 @@ void MultiplyPlayers(Vector3 centerPosition)
             float offsetX = (column - columns / 2f) * spacing;
             float offsetZ = row * spacing;
 
-            Vector3 spawnPos = centerPosition + new Vector3(Random.Range(-0.15f, 0.15f), 0f, 0f);
+            Vector3 spawnPos = centerPosition + new Vector3(offsetX + Random.Range(-0.15f, 0.15f), 0f, offsetZ);
 
             GameObject newPlayer = Instantiate(playerPrefab, spawnPos, Quaternion.identity);
 
@@ -62,6 +62,18 @@ void MultiplyPlayers(Vector3 centerPosition)
             Collider newCollider = newPlayer.GetComponent<Collider>();
 
             GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
+
+            foreach (GameObject player in players)
+            {
+                if (player == newPlayer) continue;
+
+                Collider otherCollider = player.GetComponent<Collider>();
+
+                if (newCollider != null && otherCollider != null)
+                {
+                    Physics.IgnoreCollision(newCollider, otherCollider);
+                }
+            }
             }
         }
     }

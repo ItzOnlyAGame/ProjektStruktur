@@ -283,4 +283,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerShoot
   projectilePrefab: {fileID: 7150132990757153368, guid: 0d716d8fae526d54fb6811a6a9d0664b, type: 3}
-  cooldown: 0.5
+  cooldown: 0.9

@@ -126,7 +126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcb17896d3cb8d740ad768ea53166d2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Multiplier
-  speed: 3
+  speed: 7
 --- !u!54 &6619474148821325300
 Rigidbody:
   m_ObjectHideFlags: 0
