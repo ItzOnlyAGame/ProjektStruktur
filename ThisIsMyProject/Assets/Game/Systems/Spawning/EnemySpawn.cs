@@ -5,17 +5,24 @@ public class EnemySpawner : MonoBehaviour
     public GameObject enemyPrefab;
     public Transform player;
 
-    public float spawnInterval = 3f;
-    public int maxEnemies = 5;
+    public float minSpawnInterval = 2.5f;
+    public float maxSpawnInterval = 6f;
+    public int maxEnemies = 9;
 
     private float timer;
+    private float nextSpawnTime;
     private int currentEnemies;
 
+    void Start()
+    {
+        // Set the first random spawn time
+        nextSpawnTime = Random.Range(minSpawnInterval, maxSpawnInterval);
+    }
     void Update()
     {
         timer += Time.deltaTime;
 
-        if (timer >= spawnInterval && currentEnemies < maxEnemies)
+        if (timer >= nextSpawnTime && currentEnemies < maxEnemies)
         {
             SpawnEnemy();
             timer = 0f;

@@ -3,6 +3,7 @@ using UnityEngine;
 public class ammo : MonoBehaviour
 {
     public float speed = 10f;
+    public int damage = 1;
 
     private Rigidbody rb;
 
@@ -10,7 +11,7 @@ public class ammo : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
 
-        // Move only on Z axis (forward)
+        // Move only on Z axis
         rb.linearVelocity = new Vector3(0f, 0f, speed);
     }
 
@@ -18,8 +19,14 @@ public class ammo : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            Destroy(collision.gameObject); // kill enemy
-            Destroy(gameObject);           // destroy projectile
+            EnemyHealth enemyHealth = collision.gameObject.GetComponent<EnemyHealth>();
+
+            if (enemyHealth != null)
+            {
+                enemyHealth.TakeDamage(damage);
+            }
+
+            Destroy(gameObject);
         }
 
         if (collision.gameObject.CompareTag("EndWall"))

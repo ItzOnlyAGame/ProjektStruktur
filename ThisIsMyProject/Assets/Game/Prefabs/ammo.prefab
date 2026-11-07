@@ -127,6 +127,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Projectile
   speed: 10
+  damage: 1
 --- !u!54 &2060116504934339722
 Rigidbody:
   m_ObjectHideFlags: 0
