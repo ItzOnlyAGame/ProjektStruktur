@@ -630,6 +630,9 @@ MonoBehaviour:
   playerPrefab: {fileID: 3712809697664446294, guid: 04e165ce8c3a62f4eaca29f7cd358b6a, type: 3}
   addAmount: 1
   spacing: 1.5
+  bridgeMinX: -0.49
+  bridgeMaxX: 0.55
+  edgeMargin: 0.15
 --- !u!4 &1031272576 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7564395083701322906, guid: 04e165ce8c3a62f4eaca29f7cd358b6a, type: 3}
@@ -1131,6 +1134,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1031272576}
+    - target: {fileID: 6083951709682610951, guid: fa882ed6ca6d2484ab330bf63bc35f0d, type: 3}
+      propertyPath: m_Constraints
+      value: 116
+      objectReference: {fileID: 0}
     - target: {fileID: 6516450673784018898, guid: fa882ed6ca6d2484ab330bf63bc35f0d, type: 3}
       propertyPath: m_Name
       value: Enemy
